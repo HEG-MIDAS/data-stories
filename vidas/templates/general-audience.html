@@ -1,0 +1,372 @@
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <title>Data Story - Grand Public</title>
+      <script type="text/javascript" src="utils.js"></script>
+      <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+      <script language="javascript" type="text/javascript" src="slider.js?dev=' + Math.floor(Math.random() * 100) + '"></script>
+      <script language="javascript" type="text/javascript" src="sketch-temp-heatmap-interactive-9.js?dev=' + Math.floor(Math.random() * 100) + '"></script>
+      <script language="javascript" type="text/javascript" src="sketch-water-temps-wave-13.js?dev=' + Math.floor(Math.random() * 100) + '"></script>
+      <script language="javascript" type="text/javascript" src="sketch-glacier-volume-15.js?dev=' + Math.floor(Math.random() * 100) + '"></script>
+      <script language="javascript" type="text/javascript" src="sketch-circle-animated-12.js?dev=' + Math.floor(Math.random() * 100) + '"></script>
+
+      <link rel="stylesheet" href="/static/lib/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/extra.css" />
+      <link rel="stylesheet" href="css/main.css" />
+
+      <script src="/static/lib/bootstrap/js/bootstrap.bundle.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    {% include 'navbar.html' %}
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5 col-lg-7">
+            <p class="title">
+              Effet du réchauffement climatique dans les eaux du Grand Genève
+            </p>
+            <p class="subtitle">
+              Data Story - Grand Public
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <p class="paragraph">
+              Le changement climatique a des conséquences critiques pour notre planète. L'augmentation des températures liée aux émissions de gaz à effet de serre a un impact important sur le Grand Genève et ses 
+            </p>
+          </div>
+          <div class="col-md-4">
+            <p class="paragraph">
+              eaux. La fonte progressive des glaciers, la diminution  des réserves d'eau et l'augmentation de la température des rivières, des fleuves et des lacs qui présentent une menace pour leur diversité 
+            </p>
+          </div>
+          <div class="col-md-4">
+            <p class="paragraph">
+              biologique, ne sont que quelques-unes de ses effets inquiétants. La protection du climat est fondamentale pour atténuer ces conséquences. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">  
+        <div class="row">
+          <div class="col-xl-5 col-lg-7">
+            <p class="small_title">
+              Augmentation de la température 
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <p class="paragraph">
+              Le réchauffement en Suisse est aujourd'hui plus de deux fous plus important que la moyenne mondiale [1]. Dans le graphique (visualisation 1), on peut voir l'évolution des températures à Genève depuis les années 1950. La tendance observée ces dernières
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <p class="paragraph">
+              décennies est préoccupante. Cette augmentation de la température, selon le Centre national pour les services climatiques, entraîne des étés plus secs, des précipitations plus fortes, une augmentation des jours tropicaux et des hivers moins 
+            </p>
+          </div>
+          <div class="col-md-4">
+            <p class="paragraph">
+              enneigés [2]. Au niveau mondial, on a constaté une fréquence croissante des extrêmes météorologiques tels que les canicules, les incendies entraînant la déforestation et les inondations [3]. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div id="p5sketchinteractivetemps"  class="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div id="p5sketchglacier"  class=""></div>
+          </div>
+
+          <div class="col-md-6">                
+            <p class="small_title">
+              Volume du glacier du Rhône  
+            </p>
+            
+            <p class="paragraph">
+              L'augmentation des températures a un impact direct sur le volume des glaciers suisses. Depuis 1850, les glaciers suisses ont perdu plus de la moitié de leur volume [4].
+              Plus précisément, le volume du glacier du Rhône, comme on peut le voir sur le graphique, diminue à un rythme inquiétant. Le glacier du Rhône est la source du Rhône, l'une des principales rivières du Grand Genève.  
+            </p>
+            <p class="paragraph">
+              Une réduction drastique du volume des glaciers leur ferait progressivement perdre de leur importance dans le régime des eaux suisses et aurait de multiples conséquences négatives [3] :
+              Elle aurait un impact sur le flux d'eau et donc sur la quantité d'électricité qui pourrait être produite par les centrales hydroélectriques. A titre de référence, en Suisse, près de 60% de l'électricité provient des centrales hydroélectriques [4].   
+            </p>
+            <p class="paragraph">
+              Cela aurait aussi un impact sur la sécurité des montagnes, rendant celles-ci plus instables, augmentant les possibilités de catastrophes naturelles.                    
+              Ce fait aurait une influence négative sur le tourisme alpin.         
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <p class="small_title">
+              Augmentation de la température dans des cours d'eau
+            </p>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <p class="paragraph">
+            L'augmentation des températures a aussi entraîné une hausse des températures de l'eau dans le Grand Genève. Nous nous concentrerons sur le Rhône et l'Arve, traversant le Grand Genève. Comme nous pouvons le voir sur le graphique (visualisation 3), leurs températures ont   
+          </p>
+        </div>
+
+        <div class="col-md-4">
+          <p class="paragraph">
+            augmenté de manière significative au cours des 15 dernières. 
+            <br/>
+            Le lac Léman est le plus grand lac alpin d'Europe et l'un des éléments clés du paysage du Grand Genève. Le lac Léman se réchauffe aussi. Comme le montre le graphique (visualisation 3), la température 
+          </p>
+        </div>
+        <div class="col-md-4">
+          <p class="paragraph">
+            de l'eau à 150 m a augmenté de plus d'un demi-degré au cours des 15 dernières années.  Le lac Léman est un milieu fragile, un changement de sa température est une menace pour sa biodiversité.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div id="p5sketchwater"  class="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <p class="small_title">
+              Gaz à effet de serre   
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <p class="paragraph">
+              L'effet de serre produit est considéré comme l'un des principaux facteurs du réchauffement climatique.
+              Il est fondamental de réduire les émissions de gaz à effet de serre pour atténuer la hausse des températures. Le gouvernement suisse s’est engagé, dans l'Accord de Paris sur le climat de 2015, à réduire les émissions de gaz à effet de serre de moitié d'ici 2030, par rapport aux niveaux de 1990 [5]. 
+            </p>
+          </div>
+
+          <div class="col-md-4">
+            <p class="paragraph">
+              Dans le graphique (visualisation 4), nous avons calculé l'évolution des émissions sur deux périodes : de 1990 jusqu'à l'entrée en vigueur des mesures de la loi sur le CO2 (année 2000), et de là, jusqu'à la dernière année pour laquelle nous disposons de données (2020). 
+              Comme nous pouvons le voir sur le graphique, les émissions en Suisse ont diminué. 
+            </p>
+          </div>
+          <div class="col-md-4">
+            <p class="paragraph">
+              Mais, bien que depuis le début des mesures de réduction des émissions, nous pouvons observer une diminution plus importante des émissions (tendance 2000-2020), ce rythme de diminution est loin d'être suffisant pour atteindre l'objectif pour 2030 fixé dans l'Accord de Paris sur le climat (prédiction jusqu'en 2030). 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div id="p5sketchges" class=""></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="small_title">
+              Appel à l'action
+            </p>
+            <p class="paragraph">
+              Pour pouvoir continuer à réduire l'empreinte carbone, nous devons tous adopter des pratiques durables. <a class="">Chaque petit geste compte</a> et contribue à la cause : 
+            </p>
+            <div class="row">
+
+              <div class="col-lg-6">
+                <p class="small_title">
+                  Zéro déchet   
+                </p>
+                <p class="paragraph">
+                  Recycle tout ce qui est possible et essaie de n'utiliser que des sacs, des bouteilles d'eau, des tasses à café, des pailles et des couverts réutilisables.  
+                </p>
+              </div>
+              <div class="col-lg-6">
+                <p class="small_title">
+                  Dis Non au plastique  
+                </p>
+                <p class="paragraph">
+                  Réduis ton utilisation de déchets plastiques non recyclables. La majorité finit dans les océans, contribuant à la pollution et aux émissions de gaz à effet de serre.                  
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <p class="small_title">
+                  Transport responsable
+                </p>
+                <p class="paragraph">
+                  Quand c'est possible, voyage en vélo, en transports publics et en transports qui produisent moins d'émissions de gaz à effet de serre.           
+                </p>
+              </div>
+              <div class="col-lg-6">
+                <p class="small_title">
+                  Aliments locaux 
+                </p>
+                <p class="paragraph">
+                  Considère l'achat d'aliments locaux de saison. Cela évite des transports inutiles qui ont un impact sur l'environnement et sur les eaux du Grand Genève. 
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <p class="small_title">
+                  Énergie
+                </p>
+                <p class="paragraph">
+                  Sois conscient.e de ta consommation d'énergie. Éteins les appareils ménagers quand tu ne les utilises pas. La consommation d'énergie basée sur les combustibles fossiles est l'un des principaux facteurs du réchauffement de la planète. 
+                </p>
+              </div>
+              <div class="col-lg-6">
+                <p class="small_title">
+                  Résidu alimentaire
+                </p>
+                <p class="paragraph">
+                  Assure-toi que ce que tu recycles ne contient pas d'huile, de graisse, de fromage, etc. Les matériaux recyclables doivent être propres, sinon ils ne peuvent pas être recyclés et ils peuvent polluer d'autres matériaux recyclables.                     
+                </p>  
+              </div>
+            </div>
+          </div>
+          
+
+          <div class="col-lg-6" style="margin: auto;">
+            <img src="images/no-thanks-plastic-1.jpg" width="100%" height="auto"/>
+            <p class="">
+              "No Thanks", Hollie Fuller. <a href="https://www.holliefuller.co.uk" target="_blank">https://www.holliefuller.co.uk</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <p class="small_title">
+              Références
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col links">
+            <p class="paragraph" >
+              - [1] L'évolution de la température en Suisse en comparaison mondiale. Climat du blog de MétéoSuisse le 12 mai 2021 : https://www.meteosuisse.admin.ch/dam/jcr:a6c4d5ab-405f-4b9d-adb8-667215688184/mch_blog_20210512_vergleich_tmp_glob_CH_F.pdf
+              <br/>
+              - [2] NCCS (Pub.) 2018: CH2018 - Climate Scenarios for Switzerland. National Centre for Climate Services, Zurich. 24 pp. ISBN 978-3-9525031-3-3 
+              <br/>
+              - [3] CH2018 (2018), CH2018 – Climate Scenarios for Switzerland, Technical Report, National Centre for Climate Services, Zurich, 271 pp. ISBN: 978-3-9525031-4-0
+              <br/>
+              - [4] Scénarios hydrologiques Hydro-CH2018. Eaux suisses et changements climatiques. National Centre for Climate Services. OFEV 2021. 
+              <br/>
+              - [5] Environment Switzerland 2022. Report of the Federal Council. Swiss Federal Council, 2022.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <p class="small_title">
+              Données
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col links">
+            <p class="paragraph" >
+              - MeteoSwiss: <a href="https://gate.meteoswiss.ch/idaweb/login.do;idaweb=hEc6nYcijOvNt8Ea90Pvk-hzTtu_EnxKTMxAndR6mwqf1r1PZtM4!1076607888" target="_blank">https://gate.meteoswiss.ch/idaweb/login.do;idaweb=hEc6nYcijOvNt8Ea90Pvk-hzTtu_EnxKTMxAndR6mwqf1r1PZtM4!1076607888</a>             
+              <br/>
+                - OFEV:  <a href="https://www.bafu.admin.ch/bafu/fr/home/themes/eaux/etat/donnees/donnees-de-mesure-hydrologiques-actuelles.html" target="_blank"> https://www.bafu.admin.ch/bafu/fr/home/themes/eaux/etat/donnees/donnees-de-mesure-hydrologiques-actuelles.html</a>             
+              <br/>
+              - GLAMOS: <a href="https://www.glamos.ch/en/#/A10g-05" target="_blank">https://www.glamos.ch/en/#/A10g-05</a>             
+              <br/>
+              - BAFU: <a href="https://www.bafu.admin.ch/bafu/de/home.html" target="_blank">https://www.bafu.admin.ch/bafu/de/home.html</a>
+              <br/>
+              - Les jeux de données utilisés pour le lac Léman sont obtenus à un seul point de collecte entre 100 et 155m de profondeur (OLA-IS, AnaEE-France, INRAE, CIPEL [Rimet et al. https://doi.org/10.4081/jlimnol.2020.1944])
+              <br/>
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let myp5temps = new p5(gradient_v1, '');
+      let myp5glacier = new p5(glacier, '');
+      let myp5water = new p5(water, '');
+      let myp5ges = new p5(ges, '');
+    </script>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <p class="paragraph">
+              Haute école de gestion de Genève, HES-SO Genève. Javier LLoret Pardo, René Schneider.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+</html>

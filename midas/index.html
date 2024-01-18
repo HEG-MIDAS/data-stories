@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Story</title> 
+
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/extra.css" />
+    <link rel="stylesheet" href="static/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/main.css" />
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
+  </head>
+
+  <body>
+
+    <script> 
+      $(function(){
+         $('.header').load("navbar.html"); 
+      });
+    </script> 
+    <div class="header"></div>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-5 col-lg-7 col-xs-9">
+            <p class="title">
+              Marronnier de la Treille 
+            </p>
+            <p class="subtitle">
+              Data Story 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-10 column">            
+            <a href="chart.html"><img src="static/images/annotated-chart-3.jpg" alt="Scientific Audience" class="image" /></a>
+            <div class="middle">
+              <a class="text" href="chart.html">Public Scientifique</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-10 column">
+            <a href="presentation.html"><img src="static/images/marronnier-presentations-1.jpg" alt="General Audience" class="image" /></a>
+            <div class="middle">
+              <a class="text" href="presentation.html">Décideurs</a>
+            </div>
+          </div>
+          
+          <div class="col-lg-4 col-md-10 column">
+            <a href="comic.html"><img src="static/images/data-comic-4.jpg" alt="Young Public" class="image" /></a>
+            <div class="middle">
+              <a class="text" href="comic.html">Jeune Public</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+</html>
