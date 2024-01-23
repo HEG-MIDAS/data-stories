@@ -14,7 +14,8 @@ jobs:
           files: midas/ vidas/
           dest: datastories.zip
 
-  extract:
+  extract-and-deploy:
+    needs: [zip-files]
     runs-on: datastories
     steps:
       - name: unzip datastories.zip
