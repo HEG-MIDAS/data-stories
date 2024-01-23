@@ -18,11 +18,11 @@ PATH_IN_WATER_TEMPS = r'static/data/water-course-geneva-rhone-and-arve-leman-tem
 PATH_IN_GLACIER_VOL = r'static/data/volume-total-rhone.csv'
 PATH_GES_PARIS_LIN_REGR = r'static/data/tous-les-ges-sw-with-goals-and-linear-regression.csv'
 
-PATH_IN_TEMPS = os.getcwd()+'/vidas/static/data/temps-cointrin-decades-norme-6190.csv'
-PATH_IN_CO2 = os.getcwd()+'/vidas/static/data/tous-les-GES.csv'
-PATH_IN_WATER_TEMPS = os.getcwd()+'/vidas/static/data/water-course-geneva-rhone-and-arve-leman-temps-moving-avg.csv'
-PATH_IN_GLACIER_VOL = os.getcwd()+'/vidas/static/data/volume-total-rhone.csv'
-PATH_GES_PARIS_LIN_REGR = os.getcwd()+'/vidas/static/data/tous-les-ges-sw-with-goals-and-linear-regression.csv'
+PATH_IN_TEMPS = os.getcwd()+'/static/data/temps-cointrin-decades-norme-6190.csv'
+PATH_IN_CO2 = os.getcwd()+'/static/data/tous-les-GES.csv'
+PATH_IN_WATER_TEMPS = os.getcwd()+'/static/data/water-course-geneva-rhone-and-arve-leman-temps-moving-avg.csv'
+PATH_IN_GLACIER_VOL = os.getcwd()+'/static/data/volume-total-rhone.csv'
+PATH_GES_PARIS_LIN_REGR = os.getcwd()+'/static/data/tous-les-ges-sw-with-goals-and-linear-regression.csv'
 
 # prevent cached responses
 if app.config["DEBUG"]:
