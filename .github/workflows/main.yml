@@ -28,7 +28,7 @@ jobs:
         run: cd midas && docker build -t datastories-midas:latest .
         shell: bash
       - name: creating docker image for vidas
-        run: cd ../vidas && docker build -t datastories-vidas:latest .
+        run: cd vidas && docker build -t datastories-vidas:latest .
         shell: bash
       - name: Deploy Docker Stack
         run: docker stack deploy --with-registry-auth --resolve-image always -c /home/docker/datastories/docker-compose.yml datastories
