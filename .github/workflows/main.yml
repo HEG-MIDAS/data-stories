@@ -1,0 +1,34 @@
+name: Zip Files
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  zip-files:
+    runs-on: datastories
+    steps:
+      - uses: actions/checkout@v2
+      - uses: vimtor/action-zip@v1.1
+        with:
+          files: midas/ vidas/
+          dest: datastories.zip
+
+  extract:
+    runs-on: datastories
+    steps:
+      - name: unzip datastories.zip
+        run: unzip datastories.zip
+        shell: bash
+      - name: remove datastories.zip
+        run: rm datastories.zip
+        shell: bash
+      - name: creating docker image for midas
+        run: cd midas && docker build -t datastories-midas:latest .
+        shell: bash
+      - name: creating docker image for vidas
+        run: cd ../vidas && docker build -t datastories-vidas:latest .
+        shell: bash
+      - name: Deploy Docker Stack
+        run: docker stack deploy --with-registry-auth --resolve-image always -c /home/docker/datastories/docker-compose.yml datastories
+        shell: bash
