@@ -19,7 +19,7 @@ jobs:
     runs-on: datastories
     steps:
       - name: unzip datastories.zip
-        run: unzip datastories.zip
+        run: unzip -o datastories.zip
         shell: bash
       - name: remove datastories.zip
         run: rm datastories.zip
