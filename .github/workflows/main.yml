@@ -30,6 +30,9 @@ jobs:
       - name: creating docker image for vidas
         run: cd vidas && docker build -t datastories-vidas:latest .
         shell: bash
-      - name: Deploy Docker Stack
-        run: docker stack deploy -c /home/docker/datastories/docker-compose.yml datastories
+      - name: Deploy Docker midas
+        run: docker service update --force datastories_midas
+        shell: bash
+      - name: Deploy Docker vidas
+        run: docker service update --force datastories_vidas
         shell: bash
